@@ -1,0 +1,33 @@
+/* ******    Fonts: ***************************  */
+/* *******   Montserrat: 400, 500, 600 ********  */
+/**********  Prata: 400       ****************/
+
+
+/*********** GENERAL STYLING ******************/
+@import url('https://fonts.googleapis.com/css2?family=Prata:wght@400&family=Montserrat:wght@400;500;600');
+
+:root {
+    --primary-color: #2bcbba;
+    --light-color: #d1d8e0;
+    --grey-color: #687080;
+    --red-color: #ff4757;
+    --flashwhite-color: #f1f2f6;
+    --white-color: #ffffff;
+    --ldark-color: #373737;
+    --dark-color: #212121;
+    --vdark-color: #161616;
+    
+    --primary-font: 'Montserrat', sans-serif;
+    --second-font: 'Prata', serif;
+    --fs14: 14px;
+    --fw600: 600;
+
+    --transition-color: color .3s;
+    --transition-background: background-color .3s;
+    --transition-border: border .3s;
+    --transition-transform: transform .3s;
+
+    --shadow: 0 10px 20px 0 rgb(0 0 0 / 20%);
+    --fade: fade-bottom .3s cubic-bezier(0.39, 0.575, .0565, 1) both;
+}
+
