@@ -52,7 +52,7 @@
                     <div class="container">
                         <div class="wrap">
                             <nav>
-                                <a href="#" class="menu-trigger"><i class="ri-menu-line"></i></a>
+                                <a href="#" class="menu-trigger" data-open-btn><i class="ri-menu-line"></i></a>
                                 <ul>
                                     <li><a href="#"><span>Home</span></a></li>
                                     <li>
@@ -207,7 +207,7 @@
                             <div class="logo"><a href="#">dotshop</a></div>
                             <div class="icons">
                                 <ul>
-                                    <li><a href="#"><i class="ri-search-line"></i></a></li>
+                                    <li><a href="#" data-open-btn><i class="ri-search-line"></i></a></li>
                                     <li><a href="#"><i class="ri-heart-line"></i><span class="qty">5</span></a></li>
                                     <li><a href="#"><i class="ri-user-line"></i></a></li>
                                     <li><a href="#"><i class="ri-shopping-bag-2-line"></i><span class="qty">2</span></a></li>
@@ -219,17 +219,72 @@
             </header>
 
             <main>
-
+                <div class="hero">
+                    <div class="container">
+                        <div class="wrap object-cover">
+                            <div class="list big">
+                                <a href="#">
+                                    <div class="image">
+                                        <img src="images/hero_01.jpg" alt="hero 1">
+                                    </div><!-- end image -->
+                                    <div class="info">
+                                        <div class="btn-light">Shop Now</div>
+                                    </div><!-- end info -->
+                                </a>
+                            </div><!-- end list -->  
+                            <div class="list">
+                                <a href="#">
+                                    <div class="image">
+                                        <img src="images/hero_02.jpg" alt="hero 2">
+                                    </div><!-- end image -->
+                                    <div class="info">
+                                        <div class="btn-light">Clothing</div>
+                                    </div><!-- end info -->
+                                </a>
+                            </div><!-- end list -->
+                            <div class="list">
+                                <a href="#">
+                                    <div class="image">
+                                        <img src="images/hero_03.jpg" alt="hero 3">
+                                    </div><!-- end image -->
+                                    <div class="info">
+                                        <div class="btn-light">Shoes</div>
+                                    </div><!-- end info -->
+                                </a>
+                            </div><!-- end list -->
+                            <div class="list">
+                                <a href="#">
+                                    <div class="image">
+                                        <img src="images/hero_05.jpg" alt="hero 5">
+                                    </div><!-- end image -->
+                                    <div class="info">
+                                        <div class="btn-light">Glasses</div>
+                                    </div><!-- end info -->
+                                </a>
+                            </div><!-- end list -->
+                            <div class="list">
+                                <a href="#">
+                                    <div class="image">
+                                        <img src="images/hero_04.jpg" alt="hero 4">
+                                    </div><!-- end image -->
+                                    <div class="info">
+                                        <div class="btn-light">Bag</div>
+                                    </div><!-- end info -->
+                                </a>
+                            </div><!-- end list -->                            
+                        </div><!-- end wrap -->
+                    </div><!-- end container -->
+                </div><!-- end hero -->
             </main>
 
             <footer>
 
             </footer>
 
-            <div class="overlay"></div>
+            <div class="overlay" data-overlay></div>
 
-            <nav class="mobile">
-                <a href="#" class="close-trigger"><i class="ri-close-line"></i></a>
+            <nav class="mobile" data-show>
+                <a href="#" class="close-trigger" data-close-btn><i class="ri-close-line"></i></a>
                 <ul>
                     <li><a href="#">Home</a></li>
                     <li>
@@ -274,6 +329,32 @@
                     <a href="#" class="btn-light">Signup</a>
                 </div><!-- end enter -->
             </nav>
+
+            <div class="search-modal" data-show>
+                <div class="container">
+                    <div class="wrap">
+                        <div class="search-head">
+                            <strong>Search Everything</strong>
+                            <a href="#0" class="close-trigger" data-close-btn><i class="ri-close-line"></i></a>
+                        </div><!-- end search-head -->
+                        <form action="#" class="search">
+                            <i class="ri-search-line"></i>
+                            <input type="search" placeholder="Search products">
+                            <input type="submit">
+                            <i class="ri-arrow-right-line"></i>
+                        </form>
+                        <div class="search-footer">
+                            <p>
+                                <span>Popular search:</span>
+                                <a href="#">T-shirt</a>
+                                <a href="#">Glasses</a>
+                                <a href="#">Crafts</a>
+                            </p>
+                        </div><!-- end search-footer -->
+                    </div><!-- end wrap -->
+                </div><!-- end container -->
+            </div><!-- end search-modal -->
+
         </div><!-- end page -->
 
         <script src="script.js"></script>

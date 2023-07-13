@@ -224,6 +224,12 @@ header li a:hover {
     pointer-events: none;
     z-index: 15;
     transition: .5s ease;
+    opacity: 0;
+}
+
+.overlay.active {
+    opacity: 1;
+    pointer-events: all;
 }
 
 nav.mobile {
@@ -238,6 +244,15 @@ nav.mobile {
     z-index: 1000;
     display: flex;
     flex-direction: column;
+    transition: all .3s ease-in-out;
+
+    left: -100%;
+    visibility: hidden;
+}
+
+nav.mobile.active {
+    left: 0;
+    visibility: visible;
 }
 
 nav.mobile > ul > li {
@@ -359,12 +374,144 @@ nav.mobile > ul > li > span {
     height: 55px;
     font-size: 20px;
     cursor: pointer;
+    /*background-color: var(--light-color);
+    border-radius: 50%; */
     transition: color .3s;
 }
 
 nav.mobile > ul > li > span:hover {
-color: var(--grey-color);
+    color: var(--grey-color);    
 }
+
+nav.mobile .submenu {
+    height: 0;
+    overflow: hidden;
+}
+
+nav.mobile .submenu a {
+    color: #7f7f7f;
+    padding-left: 15px;
+    transition: color .3s;
+}
+
+nav.mobile .submenu a:hover {
+    color: var(--dark-color);
+}
+
+nav.mobile .submenu {
+    transform: translateY(15px);
+    transition: height .3s, transform .3s;
+}
+
+nav.mobile .expand ~ .submenu {
+    height: auto;
+    transform: translateY(0);
+}
+
+/* ********** SEARCH ****************** */
+.search-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 30px 0;
+    background-color: var(--white-color);
+    z-index: 999;    
+    transition: opacity .3s ease-in-out;
+
+    opacity: 0;
+    visibility: hidden;    
+}
+
+.search-modal.active {
+    opacity: 1;
+    visibility: visible;    
+}
+
+.search-modal .wrap {
+    max-width: 640px;
+    margin: 0 auto;
+}
+
+.search-modal .search-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+form.search {
+    position: relative;
+    height: 46px;
+    color: var(--dark-color);
+    background-color: var(--white-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+form.search input {
+    position: absolute;
+}
+
+form.search input[type=search] {
+    width: 100%;
+    height: 46px;
+    top: 0;
+    left: 0;
+    padding: 10px 15px 10px 40px;
+    border: 1px solid var(--grey-color);
+    border-radius: 6px;
+}
+
+form.search input[type=submit] {
+    right: 0;
+    top: 0;
+    border: none;
+    background-color: transparent;
+    color: transparent;
+    height: 100%;
+    cursor: pointer;
+    z-index: 10;
+}
+
+form.search i {
+    position: relative;
+    z-index: 1;
+    padding: 0 15px;
+}
+
+.search-modal .search-footer {
+    margin-top: 10px;
+    color: var(--grey-color);
+}
+
+.search-modal .search-footer a {
+    margin-right: 8px;
+    color: var(--dark-color);
+    text-decoration: underline;
+    transition: color .3s ease-in-out;    
+}
+
+.search-modal .search-footer a:hover {
+    color: var(--grey-color);
+}
+
+/* ************** HERO ***************** */
+
+.hero .wrap {
+    display: grid;
+}
+
+.hero .big {
+    height: 335px;
+}
+
+.hero .list:not(.big) {
+    height: 230px;
+}
+
 
 /* ************ PRODUCT ************** */
 .product {
@@ -465,7 +612,46 @@ color: var(--grey-color);
     margin-right: 10px;
 }
 
-/* ************ MEDIA QUERIES ************** */
+.hero .wrap .list {
+    position: relative;
+    overflow: hidden;
+}
+
+/* *************************************** */
+/* ************ MEDIA QUERIES ************ */
+/* *************************************** */
+
+@media only screen and (max-width: 576px) {
+    .header-main .icons :where(li:nth-child(2), li:nth-child(3)) {
+        display: none;
+    }
+
+    .hero .wrap {
+        gap: 15px;
+    }
+}
+
+@media (min-width: 576px) and (max-width: 767px) {
+    .hero .wrap {
+        grid-template-columns: 1fr 1fr;
+    }
+    .hero .big {
+        grid-column-start: 1;
+        grid-column-end: 3;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero .wrap {
+        grid-template-columns: 2fr 1fr 1fr;
+    }
+
+    .hero .big {
+        grid-row-start: 1;
+        grid-row-end: 3;
+    }
+}
+
 @media only screen and  (min-width: 992px) {
     .header-main .menu-trigger {
         display: none;
@@ -551,4 +737,4 @@ color: var(--grey-color);
     .megamenu .product {
         /* grid-template-columns: repeat(auto-fit, minmax(175px, 1fr));         */
     }
-}
+}       /* ***** end media 992px ****** */
