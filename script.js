@@ -34,3 +34,19 @@ const submenu = document.querySelectorAll('.sub-trigger');
             this.classList.toggle('expand');
         }
     }
+
+// tabbed
+let tabbedNav = new Swiper('.tabs', {
+    slidesPerView: 1,
+    centeredSlides: true,
+    slidesPerGroup: false,
+    spaceBetween: 20
+});    
+
+let theTab = new Swiper('.tabs-box', {
+    slidesPerView: 1,
+    autoHeight: true,
+    thumbs: {
+        swiper: tabbedNav
+    },
+})

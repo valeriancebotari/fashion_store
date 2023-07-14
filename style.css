@@ -323,7 +323,8 @@ nav.mobile .enter div span {
     background-color: var(--white-color);
 }
 
-.btn-light:hover {
+.btn-light:hover,
+.hero a:hover .btn-light {
     background-color: var(--dark-color);
     color: var(--white-color);
 }
@@ -498,6 +499,13 @@ form.search i {
     color: var(--grey-color);
 }
 
+/* ************************************ */
+/* *************** MAIN *************** */
+/* ************************************ */
+main > div {
+    margin-bottom: 90px;    
+}
+
 /* ************** HERO ***************** */
 
 .hero .wrap {
@@ -510,6 +518,72 @@ form.search i {
 
 .hero .list:not(.big) {
     height: 230px;
+}
+
+.hero .wrap .list {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero a:hover img {
+    transform: scale(1.1);
+}
+
+.hero .info {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0 10px 40px;
+    text-align: center;
+}
+
+
+/* ************ TABBED*********** */
+
+.tabbed nav {
+    margin: 0 0 50px;
+}
+
+.tabbed nav ul {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 436px;
+    width: auto;
+    padding-bottom: 10px;
+    margin: 0 auto;  
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;  
+    scroll-snap-type: inline mandatory;
+    scroll-snap-align: start;
+}
+
+.tabbed nav ul li a {
+    font-size: clamp(20px, -0.875em + 8.333vw, 26px);
+    font-weight: 500;    
+    transition: color .3s;
+}
+
+.tabbed nav ul li:not(.swiper-slide-thumb-active) a {
+    color: var(--grey-color);
+}
+
+.tabbed nav ul li a:hover {
+    color: var(--dark-color);
+}
+
+.tabbed nav ul li.swiper-slide-thumb-active a {
+    border-bottom: 2px solid var(--dark-color);
+}
+
+.tabbed nav li {
+    width: fit-content !important;
+}
+
+.tabbed .button {
+    text-align: center;
+    margin: 30px 0 0;
 }
 
 
@@ -535,6 +609,7 @@ form.search i {
     object-fit: cover;
     height: 100%;
     position: absolute;
+    transition: all .75s cubic-bezier(0,0,.2,1);
 }
 
 .hover-image {
@@ -612,8 +687,62 @@ form.search i {
     margin-right: 10px;
 }
 
-.hero .wrap .list {
+.product .colors {
+    display: flex;
+    gap: 10px;
+    margin: 8px 0 15px;
+}
+
+.product .colors a {
     position: relative;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;    
+}
+
+.product .colors a::before {
+    content: '';
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #000000;
+    left: 5px;
+    top: 5px;
+    transition: transform .3s;
+    transform: scale(0);
+}
+
+.product .colors a.active::before,
+.product .colors a:hover::before {
+    background-color: var(--light-color);
+    transform: scale(1);
+    border: 1px solid var(--white-color);
+}
+ 
+
+/* products color */
+.product .colors .maroon    { background-color: #b53471; }
+.product .colors .gold      { background-color: #ffc321; }
+.product .colors .bluejean1 { background-color: #22699b; }
+.product .colors .bluejean2 { background-color: #6f9fc1; }
+
+.product .colors .tosca  { background-color: #67b2a7; }
+.product .colors .army   { background-color: #859288; }
+.product .colors .orange { background-color: #d59000; }
+.product .colors .light  { background-color: var(--light-color); }
+.product .colors .carmin { background-color: #9e483f; }
+
+.product .colors .highheels1 { background-color: #e3cdb9; }
+.product .colors .highheels2 { background-color: #616161; }
+
+
+/* **************** VIDEO ******************** */
+.video-box {
+    position: relative;
+    height: 500px;
+    max-width: 900px;
+    margin: 0 auto;
     overflow: hidden;
 }
 
@@ -649,6 +778,11 @@ form.search i {
     .hero .big {
         grid-row-start: 1;
         grid-row-end: 3;
+        height: 640px;
+    }
+
+    .hero .list:not(.big) {
+        height: 320px;
     }
 }
 
