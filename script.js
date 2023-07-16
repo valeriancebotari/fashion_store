@@ -35,7 +35,7 @@ const submenu = document.querySelectorAll('.sub-trigger');
         }
     }
 
-// tabbed
+// tabbed swiper
 let tabbedNav = new Swiper('.tabs', {
     slidesPerView: 1,
     centeredSlides: true,
